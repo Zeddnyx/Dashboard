@@ -24,6 +24,7 @@ export default function Nav({ children }) {
   if(!isLocal){
     return <Sign/>
   }
+  console.log(getToken)
 
   const handleExit = e => {
     e.preventDefault()
