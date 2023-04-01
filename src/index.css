@@ -7,7 +7,7 @@
 
 /* NAV */
 .li {
-  @apply w-full flex gap-3 items-center text-text h-12 py-2 pl-5 hover:bg-mainBg hover:text-bgNav hover:rounded-l-full transition-all duration-500;
+  @apply w-full flex gap-3 items-center text-text h-12 px-3 hover:bg-mainBg hover:text-bgNav hover:rounded-l-full transition-all duration-500;
 }
 
 

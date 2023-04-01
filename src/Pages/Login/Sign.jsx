@@ -1,29 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { getTokenLocal } from "../../utils/getToken";
-import { useNavigate } from "react-router-dom";
 import { postSign } from "./PostData";
+import { authContext } from "../../context/context";
 
 export default function Sign() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
   const { getToken } = getTokenLocal();
-
-  // if user have already token then navigate to dashboard
-  React.useEffect(() => {
-    if (getToken) {
-      navigate("/dashboard");
-    }
-  }, [getToken]);
+  const { signIn, setSignIn } = useContext(authContext);
 
   const submit = (e) => {
     e.preventDefault();
     postSign(username, password);
-    //if sign success then nav to dashbord
-    if (getToken) {
-      navigate("/dashboard");
-    }
   };
 
   return (
