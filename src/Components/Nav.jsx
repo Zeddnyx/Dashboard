@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
-import { MdOutlineDashboard, MdOutlineSubscriptions} from "react-icons/md";
-import { CgProfile  } from "react-icons/cg";
-import { ImNewspaper  } from "react-icons/im";
-import { AiOutlineSetting  } from "react-icons/ai";
+import React from "react";
+import { Link, Navigate } from "react-router-dom";
+import { MdOutlineDashboard, MdOutlineSubscriptions } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { ImNewspaper } from "react-icons/im";
+import { AiOutlineSetting } from "react-icons/ai";
+import { BiExit } from "react-icons/bi";
+import Sign from "../Pages/Login/Sign";
+import { getTokenLocal } from '../utils/getToken'
 
 export default function Nav({ children }) {
   const LI = ({ list, link, icon }) => {
@@ -15,6 +19,17 @@ export default function Nav({ children }) {
       </Link>
     );
   };
+
+  const { isLocal, getToken } = getTokenLocal()
+  if(!isLocal){
+    return <Sign/>
+  }
+
+  const handleExit = e => {
+    e.preventDefault()
+    localStorage.removeItem('token')
+    return <Navigate to='/sign' replace={true} />
+  }
   return (
     <>
       <div className="grid grid-cols-5">
@@ -29,13 +44,28 @@ export default function Nav({ children }) {
             {/* List Navigasi */}
             <div className="bg-bgNav w-full text-text">
               <ul className="ml-5 font-bold grid gap-2">
-                <LI link="/" icon={<MdOutlineDashboard />} list="Dashboard" />
-                <LI link="/profile" icon={<CgProfile/>} list="Profile" />
-                <LI link="/subscription" icon={<MdOutlineSubscriptions/>} list="Subscription" />
-                <LI link="/news" icon={<ImNewspaper/>} list="News" />
-                <LI link="/settings" icon={<AiOutlineSetting/>} list="Setting" />
+                <LI link="/dashboard" icon={<MdOutlineDashboard />} list="Dashboard" />
+                <LI link="/dashboard/profile" icon={<CgProfile />} list="Profile" />
+                <LI
+                  link="/dashboard/subscription"
+                  icon={<MdOutlineSubscriptions />}
+                  list="Subscription"
+                />
+                <LI link="/dashboard/news" icon={<ImNewspaper />} list="News" />
+                <LI
+                  link="/dashboard/settings"
+                  icon={<AiOutlineSetting />}
+                  list="Setting"
+                />
               </ul>
             </div>
+
+            <button className='flex gap-4 items-center' onClick={handleExit} type="submit">
+              <span>
+                <BiExit />
+              </span>
+              <span>Exit</span>
+            </button>
           </div>
         </nav>
 
