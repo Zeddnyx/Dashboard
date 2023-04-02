@@ -1,8 +1,9 @@
-import Nav from "../Components/Nav";
+import HomeDashboard from "./HomeDashboard";
 import React from "react";
+
 export default function Profile() {
   return (
-    <Nav>
+    <HomeDashboard>
       <h1 className='text-xl font-bold my-5'>kalo ini Profile nya guys</h1>
       <p>
         Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
@@ -18,6 +19,6 @@ export default function Profile() {
         duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
         consectetur et est culpa et culpa duis.
       </p>
-    </Nav>
+    </HomeDashboard>
   );
 }

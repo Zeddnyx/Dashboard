@@ -1,18 +1,15 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routing from "./routes/Routing";
-import { authContext } from "./context/context";
+import { AppProvider } from "./context/context";
 
 function App() {
-  const [signIn, setSignIn] = React.useState(false)
-  const [user, setUser] = React.useState(undefined)
-
   return (
     <>
       <BrowserRouter>
-        <authContext.Provider value={{ signIn, setSignIn, user, setUser }}>
+        <AppProvider>
           <Routing />
-        </authContext.Provider>
+        </AppProvider>
       </BrowserRouter>
     </>
   );

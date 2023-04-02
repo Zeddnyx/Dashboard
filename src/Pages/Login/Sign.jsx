@@ -1,17 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { getTokenLocal } from "../../utils/getToken";
-import { postSign } from "./PostData";
-import { authContext } from "../../context/context";
+import postSign from "./postSign";
+import { appContext } from "../../context/context";
+import { useNavigate } from "react-router-dom";
 
 export default function Sign() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const { getToken } = getTokenLocal();
-  const { signIn, setSignIn } = useContext(authContext);
+  const { setUsername, setPassword, fetchSign } = postSign();
+  const { user } = appContext()
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+      console.log('ada token nya!')
+    }
+  }, []);
 
   const submit = (e) => {
     e.preventDefault();
-    postSign(username, password);
+    fetchSign();
   };
 
   return (

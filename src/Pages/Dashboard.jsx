@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "../Components/Nav";
+import HomeDashboard from "./HomeDashboard";
 
 export default function Dashboard() {
   return (
-    <Nav>
+    <HomeDashboard>
         <h1 className='text-xl font-bold my-5'>Ini Dashboard nya guys</h1>
         <p>
           Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
@@ -19,6 +19,6 @@ export default function Dashboard() {
           commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint
           cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
         </p>
-    </Nav>
+    </HomeDashboard>
   );
 }
