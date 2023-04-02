@@ -8,6 +8,8 @@ export default function HomeDashboard({ children }) {
   const navigate = useNavigate();
   console.log(user);
 
+  // if refresh it will go to sign page cause the data store from sign in is lost
+  //
   useEffect(() => {
     if (!user) {
       navigate("/sign");

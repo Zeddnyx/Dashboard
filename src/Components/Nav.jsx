@@ -5,12 +5,12 @@ import { CgProfile } from "react-icons/cg";
 import { BiExit } from "react-icons/bi";
 import Sign from "../Pages/Login/Sign";
 import { getTokenLocal } from "../utils/getToken";
-import { AppContext } from "../context/context";
+import { appContext } from "../context/context";
 import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
   const { isLocal, getToken } = getTokenLocal();
-  const { user } = AppContext()
+  const { user } = appContext()
   const navigate = useNavigate();
 
   const LI = ({ list, link, icon }) => {

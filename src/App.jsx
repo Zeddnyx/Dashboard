@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routing from "./routes/Routing";
-import { AppProvider } from "./context/context";
+import AppProvider from "./context/context";
 
 function App() {
   return (
