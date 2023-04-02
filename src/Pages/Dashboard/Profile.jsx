@@ -1,4 +1,4 @@
-import HomeDashboard from "./HomeDashboard";
+import HomeDashboard from "../HomeDashboard";
 import React from "react";
 
 export default function Profile() {

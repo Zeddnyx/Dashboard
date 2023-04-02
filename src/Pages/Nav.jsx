@@ -27,26 +27,28 @@ export default function Nav() {
   const handleExit = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/sign");
   };
 
   return (
     <>
       <nav>
-        <div className="col-span-1 h-screen w-full grid gap-2 place-items-center bg-bgNav text-center">
+        <div className="parent-nav">
           {/* profile section */}
-          <div className="bg-yellow flex flex-col justify-center gap-2 items-center w-full h-full">
+          <div className="img-nav-profile">
             <img
               className="rounded-full w-36 h-36 bg-bgNav"
               src={user?.image}
               alt={user?.firstName}
             />
             <p className="font-bold">{user?.firstName}</p>
+            <p className="font-sm">{user?.email}</p>
           </div>
 
           {/* List Navigasi */}
           <div className="bg-bgNav w-full text-text">
-            <ul className="ml-5 font-bold grid gap-2 grid-cols-3 md:grid-cols-1">
+            <ul className="ul">
               <LI
                 link="/dashboard"
                 icon={<MdOutlineDashboard />}

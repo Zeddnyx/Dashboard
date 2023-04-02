@@ -1,10 +1,13 @@
-function getTokenLocal(token = "token") {
+function getTokenLocal(token = "token", user = 'user') {
   let isLocal = false;
 
-  if (localStorage.getItem(token)) {
-    const getToken = JSON.parse(localStorage.getItem(token));
+  const tokenLocal = localStorage.getItem(token)
+  const userLocal = localStorage.getItem(user)
+  if (tokenLocal && userLocal) {
+    const getToken = JSON.parse(tokenLocal);
+    const getUser = JSON.parse(userLocal);
     isLocal = true;
-    return { isLocal, getToken };
+    return { isLocal, getToken, getUser };
   }
   return { isLocal };
 }

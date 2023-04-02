@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
 import { appContext } from "../context/context";
-import Nav from "../Components/Nav";
+import Nav from "./Nav";
 import { useNavigate } from "react-router-dom";
+import { getTokenLocal } from "../utils/getToken";
 
 export default function HomeDashboard({ children }) {
-  const { user } = appContext();
+  const { user, setUser } = appContext();
   const navigate = useNavigate();
-  console.log(user);
+  const { getUser, getToken } = getTokenLocal();
 
-  // if refresh it will go to sign page cause the data store from sign in is lost
-  //
   useEffect(() => {
-    if (!user) {
+    setUser(getUser);
+    if (!getUser && getToken) {
       navigate("/sign");
-      console.log(user);
+    } else {
+      return;
     }
-  }, [user]);
+  }, []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5">

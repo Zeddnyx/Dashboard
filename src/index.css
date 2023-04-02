@@ -6,8 +6,17 @@
 }
 
 /* NAV */
+.parent-nav {
+  @apply col-span-1 h-screen w-full grid gap-2 place-items-center bg-bgNav text-center
+}
+.img-nav-profile {
+  @apply bg-yellow flex flex-col justify-center gap-2 items-center w-full h-full
+}
+.ul {
+  @apply ml-5 font-bold gap-2 flex md:flex-col justify-center
+}
 .li {
-  @apply w-full flex gap-3 items-center text-text h-12 px-3 hover:bg-mainBg hover:text-bgNav hover:rounded-l-full transition-all duration-500;
+  @apply w-full flex gap-3 items-center text-text h-12 px-3 hover:bg-mainBg hover:text-bgNav hover:rounded-full md:hover:rounded-none md:hover:rounded-l-full transition-all duration-500;
 }
 
 

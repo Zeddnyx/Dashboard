@@ -5,15 +5,16 @@ import { appContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 
 export default function Sign() {
-  const { getToken } = getTokenLocal();
+  const { getToken, getUser } = getTokenLocal();
   const { setUsername, setPassword, fetchSign } = postSign();
-  const { user } = appContext()
+  const { user } = appContext();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (getToken && getUser) {
       navigate("/dashboard");
-      console.log('ada token nya!')
+    } else {
+      return;
     }
   }, []);
 

@@ -25,8 +25,8 @@ export default function postSign() {
       alert("user/password wrong");
     } else if (json.token) {
       localStorage.setItem("token", JSON.stringify(json.token));
+      localStorage.setItem("user", JSON.stringify(json));
       setSignIn(true);
-      setUser(json); // if succes login the data will store to context props
       navigate("/dashboard");
     } else {
       return;
