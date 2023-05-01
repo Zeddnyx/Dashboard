@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    @apply text-2xl font-bold
+  }
 }
 
 /* NAV */
@@ -16,7 +19,10 @@
   @apply ml-5 font-bold gap-2 flex md:flex-col justify-center
 }
 .li {
-  @apply w-full flex gap-3 items-center text-text h-12 px-3 hover:bg-mainBg hover:text-bgNav hover:rounded-full md:hover:rounded-none md:hover:rounded-l-full transition-all duration-500;
+  @apply w-full flex gap-3 items-center text-text h-12 px-3  transition-all duration-500
+}
+.li-hover {
+  @apply bg-mainBg text-bgNav rounded-full md:rounded-none md:rounded-l-full w-full flex gap-3 items-center h-12 px-3  transition-all duration-500;
 }
 
 

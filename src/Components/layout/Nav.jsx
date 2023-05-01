@@ -1,24 +1,31 @@
 import React, { useContext, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import { MdOutlineDashboard } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BiExit } from "react-icons/bi";
-import Sign from "../Pages/Login/Sign";
-import { getTokenLocal } from "../utils/getToken";
-import { appContext } from "../context/context";
+import Sign from "../../Pages/Login/Sign";
+import { getTokenLocal } from "../../utils/getToken";
+import { appContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
   const { isLocal, getToken } = getTokenLocal();
-  const { user } = appContext()
+  const { user } = appContext();
   const navigate = useNavigate();
 
   const LI = ({ list, link, icon }) => {
     return (
       <Link to={link}>
-        <li className="li">
-          <span className="text-text">{icon}</span>
-          <span>{list}</span>
+        <li className='flex items-start w-full'>
+          <NavLink
+            to={link}
+            className={({ isActive, isPending }) =>
+              isPending ? "" : isActive ? "li-hover" : "li"
+            }
+          >
+            <span className="text-text">{icon}</span>
+            <span>{list}</span>
+          </NavLink>
         </li>
       </Link>
     );
@@ -50,7 +57,7 @@ export default function Nav() {
           <div className="bg-bgNav w-full text-text">
             <ul className="ul">
               <LI
-                link="/dashboard"
+                link="/dashboard/homepage"
                 icon={<MdOutlineDashboard />}
                 list="Dashboard"
               />
@@ -58,6 +65,11 @@ export default function Nav() {
                 link="/dashboard/profile"
                 icon={<CgProfile />}
                 list="Profile"
+              />
+              <LI
+                link="/dashboard/settings"
+                icon={<CgProfile />}
+                list="Settings"
               />
 
               <button

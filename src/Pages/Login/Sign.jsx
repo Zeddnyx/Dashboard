@@ -41,7 +41,7 @@ export default function Sign() {
           placeholder="password"
         />
         <button className="bg-bgNav p-2" type="submit">
-          Login
+           Login
         </button>
       </form>
       <p>user: kminchelle</p>

@@ -1,10 +1,10 @@
 import HomeDashboard from "../HomeDashboard";
 import React from "react";
 
-export default function Profile() {
+export default function Settings() {
   return (
     <HomeDashboard>
-      <h1 className='text-xl font-bold my-5'>This Profile Page</h1>
+      <h1 className='text-xl font-bold my-5'>This Setting Page</h1>
       <p>
         Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
         cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, officia

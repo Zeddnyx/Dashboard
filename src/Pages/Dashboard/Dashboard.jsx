@@ -4,7 +4,7 @@ import HomeDashboard from "../HomeDashboard";
 export default function Dashboard() {
   return (
     <HomeDashboard>
-        <h1 className='text-xl font-bold my-5'>Ini Dashboard nya guys</h1>
+        <h1 className='text-xl font-bold my-5'>This Dashboard Page</h1>
         <p>
           Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
           cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, officia

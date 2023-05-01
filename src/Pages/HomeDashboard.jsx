@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { appContext } from "../context/context";
-import Nav from "./Nav";
+import Nav from "../Components/layout/Nav";
 import { useNavigate } from "react-router-dom";
 import { getTokenLocal } from "../utils/getToken";
 
@@ -12,7 +12,7 @@ export default function HomeDashboard({ children }) {
   useEffect(() => {
     setUser(getUser);
     if (!getUser && getToken) {
-      navigate("/sign");
+      navigate("/");
     } else {
       return;
     }
