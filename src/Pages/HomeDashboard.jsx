@@ -19,11 +19,11 @@ export default function HomeDashboard({ children }) {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5">
+    <div className="grid grid-cols-5">
       <div className="col-span-1">
         <Nav />
       </div>
-      <div className="col-span-3 xl:col-span-4 px-5">{children}</div>
+      <div className="col-span-4 px-5">{children}</div>
     </div>
   );
 }

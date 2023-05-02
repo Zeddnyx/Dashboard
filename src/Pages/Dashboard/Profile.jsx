@@ -4,8 +4,8 @@ import React from "react";
 export default function Profile() {
   return (
     <HomeDashboard>
-      <h1 className='text-xl font-bold my-5'>This Profile Page</h1>
-      <p>
+      <h1 className="text-xl font-bold my-5">This Profile Page</h1>
+      <p className="bg-yellow p-5">
         Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
         cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, officia
         excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem
@@ -14,10 +14,6 @@ export default function Profile() {
         voluptate voluptate dolor minim nulla est proident. Nostrud officia
         pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat
         reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia
-        voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem
-        sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur
-        duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
-        consectetur et est culpa et culpa duis.
       </p>
     </HomeDashboard>
   );
